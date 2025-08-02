@@ -1,0 +1,139 @@
+
+:root {
+  --primary: #007cf0;
+  --secondary: #00dfd8;
+  --bg1: #f0faff;
+  --text: #0e1726;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(135deg, var(--bg1), #d2f1ff);
+  color: var(--text);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  text-align: center;
+  cursor: pointer;
+  position: relative;
+  padding: 2rem;
+}
+
+/* 🎈 Background floating bubbles */
+.bubble {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(0, 124, 240, 0.07);
+  animation: driftUp 20s linear infinite;
+  z-index: 0;
+}
+
+@keyframes driftUp {
+  0% {
+    transform: translateY(100vh) scale(0.8);
+    opacity: 0;
+  }
+  50% { opacity: 0.3; }
+  100% {
+    transform: translateY(-10vh) scale(1.2);
+    opacity: 0;
+  }
+}
+
+.content {
+  z-index: 10;
+}
+
+.emoji {
+  font-size: 4rem;
+  margin-bottom: 0.5rem;
+}
+
+h1 {
+  font-size: 2.4rem;
+  color: var(--primary);
+  text-shadow: 0 0 5px var(--secondary);
+  margin-bottom: 0.4rem;
+  animation: pulseTitle 4s ease-in-out infinite;
+}
+
+@keyframes pulseTitle {
+  0%, 100% { text-shadow: 0 0 8px var(--secondary); }
+  50% { text-shadow: 0 0 18px var(--primary); }
+}
+
+.tagline {
+  font-style: italic;
+  color: #007cf0aa;
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+}
+
+p {
+  max-width: 600px;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+code {
+  background: #e3f2ff;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-family: 'Fira Code', monospace;
+  font-size: 0.95rem;
+  color: #007cf0;
+  transition: box-shadow 0.4s ease;
+}
+
+code:hover {
+  box-shadow: 0 0 8px rgba(0, 124, 240, 0.3);
+}
+
+.footer {
+  position: absolute;
+  bottom: 20px;
+  font-size: 0.85rem;
+  color: #4a5568;
+  z-index: 10;
+}
+
+/* 🌬️ Cloud emoji animations */
+.animated {
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+  100% { transform: translateY(0); }
+}
+
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+.float { animation-name: float; }
+.rotate { animation-name: rotate; }
+.bounce { animation-name: bounce; }
+
+@media (max-width: 600px) {
+  h1 { font-size: 2rem; }
+  .tagline { font-size: 1rem; }
+}
