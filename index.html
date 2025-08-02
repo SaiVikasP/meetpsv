@@ -4,16 +4,41 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Sai Vikas Pasupuleti | Coming Soon</title>
-  <link rel="stylesheet" href="style.css" />
+  <title>meetpsv.com — Coming Soon</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code&family=Inter&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-  <div class="container">
-    <div class="card">
-      <h1>Coming Soon</h1>
-      <p>Hello, I'm <strong>Sai Vikas Pasupuleti</strong> — a cloud enthusiast building something awesome at <a href="https://meetpsv.com" target="_blank">meetpsv.com</a>.</p>
-      <p>This website is under construction. Stay tuned!</p>
-    </div>
+<body onclick="cycleAnimation()">
+  <script src="script.js" defer></script>
+
+  <!-- 🎈 Background bubbles -->
+  <script>
+    for (let i = 0; i < 25; i++) {
+      const b = document.createElement("div");
+      b.className = "bubble";
+      b.style.left = `${Math.random() * 100}%`;
+      const size = 20 + Math.random() * 40;
+      b.style.width = b.style.height = `${size}px`;
+      b.style.animationDuration = `${10 + Math.random() * 15}s`;
+      document.body.appendChild(b);
+    }
+  </script>
+
+  <!-- ☁️ Main content -->
+  <div class="content">
+    <div id="emoji" class="emoji animated float">☁️</div>
+    <h1>meetpsv.com</h1>
+    <div class="tagline">Just getting started with the cloud.</div>
+
+    <p>Hi, I’m PSV — a curious learner exploring cloud computing and infrastructure. Not an expert, not pretending to be one. Just building, breaking, and learning along the way.</p>
+
+    <p>This space will become my digital playground — projects, notes, learnings, and maybe some silly ideas too.</p>
+
+    <p><code>#build-in-public</code> <code>#cloud-journey</code> <code>#iamtrying</code></p>
+
+    <p style="margin-top: 1rem; font-style: italic;">Click anywhere to animate the cloud ☁️</p>
   </div>
+
+  <div class="footer">© 2025 PSV — Building with patience</div>
 </body>
 </html>
